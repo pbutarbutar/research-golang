@@ -10,10 +10,8 @@ func main() {
 }
 
 func MaxProfit(prices []int) (totalProfit int) {
-
 	n := len(prices)
 	nCalc := 0
-
 	buyPrice := prices[0]
 	maxProfit := 0
 	sellPrice := 0
@@ -26,20 +24,17 @@ func MaxProfit(prices []int) (totalProfit int) {
 				actualProfit = profit
 				sellPrice = prices[j]
 				nCalc++
-
 			} else {
 				if i == 0 {
 					fmt.Printf("Beli: %d ", buyPrice)
 				} else {
 					fmt.Printf("Beli: %d ", prices[j])
 				}
-
 				nCalc++
-
 				break
-
 			}
 		}
+
 		if actualProfit > 0 {
 			fmt.Printf("Jual: %d ", sellPrice)
 			totalProfit = totalProfit + actualProfit
@@ -51,6 +46,6 @@ func MaxProfit(prices []int) (totalProfit int) {
 			break
 		}
 	}
-
 	return
+
 }
