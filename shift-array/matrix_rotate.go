@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-var a1 [][]int
-
 func main() {
 	fmt.Println("Base Array Matrix: ", [][]int{
 		[]int{1, 2, 3},
