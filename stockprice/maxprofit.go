@@ -4,12 +4,12 @@ import "fmt"
 
 func main() {
 	prices := []int{4, 11, 2, 20, 59, 80}
-	maxProfit := MaxProfit(prices)
+	maxProfit := MaxProfit(prices, 2)
 	fmt.Println()
 	fmt.Println("Profit :", maxProfit)
 }
 
-func MaxProfit(prices []int) (totalProfit int) {
+func MaxProfit(prices []int, k int) (totalProfit int) {
 	n := len(prices)
 	nCalc := 0
 	buyPrice := prices[0]
@@ -28,7 +28,13 @@ func MaxProfit(prices []int) (totalProfit int) {
 				if i == 0 {
 					fmt.Printf("Beli: %d ", buyPrice)
 				} else {
-					fmt.Printf("Beli: %d ", prices[j])
+					if prices[j] > 2 {
+						buyPrice = 2
+					} else {
+						buyPrice = prices[j]
+					}
+
+					fmt.Printf("Beli: %d ", buyPrice)
 				}
 				nCalc++
 				break
@@ -46,6 +52,7 @@ func MaxProfit(prices []int) (totalProfit int) {
 			break
 		}
 	}
+
 	return
 
 }
